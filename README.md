@@ -1,2 +1,5 @@
 # starfield
-Starfield in javascript and using this P5.js lib
+
+An attempt at emulating the Windows 3.1 Starfield Screensaver
+
+javascript and the P5.js lib
