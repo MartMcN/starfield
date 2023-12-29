@@ -3,6 +3,8 @@ import { Star } from "./star.js";
 let starField = [];
 let ctx = {};
 let canvasEl = {};
+let backGrdOn;
+let backGrd;
 
 // Creates an array of star objects with random positions
 const starFieldRandom = function (qty) {
@@ -19,12 +21,27 @@ const starFieldRandom = function (qty) {
 // Initalise the canvas to full screen
 // Generate starField array of stars
 // Start the rendering
-const init = function (starCount) {
+const init = function (starCount, bgGradOn = false) {
   canvasEl = document.querySelector(".canvas-view");
   ctx = canvasEl.getContext("2d", { alpha: false });
 
   canvasEl.width = window.innerWidth;
   canvasEl.height = window.innerHeight;
+
+  backGrdOn = bgGradOn;
+
+  if (backGrdOn) {
+    backGrd = ctx.createLinearGradient(
+      window.innerWidth / 2,
+      0,
+      window.innerWidth / 2,
+      window.innerHeight
+    );
+    backGrd.addColorStop(0, "#000000");
+    backGrd.addColorStop(0.4, "#000019");
+    backGrd.addColorStop(0.6, "#000019");
+    backGrd.addColorStop(1, "#000000");
+  }
 
   starField = starFieldRandom(starCount);
   requestAnimationFrame(render);
@@ -45,7 +62,12 @@ const render = function () {
   }
 
   // Clear Canvas
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  if (!backGrdOn) ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  else {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    ctx.fillStyle = backGrd;
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  }
 
   // Plot each Star
   starField.forEach((el) => {
@@ -68,4 +90,5 @@ window.addEventListener("resize", () => {
   canvasEl.height = window.innerHeight;
 });
 
-init(500);
+// Number of Stars and background gradient on/off
+init(500, false);
