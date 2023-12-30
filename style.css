@@ -1,6 +1,87 @@
+/*
+red f2482b rgb(242, 72, 43)
+blue 49a8e0 rgb(73, 168, 224)
+grey dark 58595b rgb(88, 89, 91)
+grey a7a9ac rgb(167, 169, 172)
+*/
+
+/*@import url("https://fonts.cdnfonts.com/css/futura-std-4?styles=52567,52579,52569");*/
+@import url("https://fonts.cdnfonts.com/css/futura-std-4?styles=52579");
+
 body {
   margin: 0px;
   border: 0px;
   padding: 0px;
-  overflow: hidden;
+  font-family: "Futura Std", sans-serif;
+  font-size: 32px;
+}
+
+.canvas-view {
+  position: fixed;
+}
+
+.main-container {
+  position: absolute;
+  padding: 2.5vh 2vw 2.5vh 2vw;
+  width: 96vw;
+}
+
+.grid-container {
+  display: grid;
+  gap: 5vh 5vh;
+  height: 95vh;
+}
+
+@media (min-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr;
+  }
+
+  .grid-content-1 {
+    grid-column: 1 / span 3;
+  }
+
+  .grid-content-2 {
+    grid-column: 1 / span 1;
+  }
+
+  .grid-content-3 {
+    grid-column: 1 / span 1;
+  }
+
+  .grid-content-4 {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+  }
+}
+
+.grid-common {
+  background-color: rgb(255, 255, 255, 0.8);
+  border: 5px solid rgb(242, 72, 43);
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.grid-content-2 {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.grid-content-4 {
+  background: none;
+  display: flex;
+}
+
+.video {
+  margin: auto;
+  width: 95%;
+  height: 95%;
+}
+
+.bottom-section {
+  color: white;
+  height: 100vh;
+  width: 100vw;
 }

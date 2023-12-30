@@ -38,8 +38,8 @@ const init = function (starCount, bgGradOn = false) {
       window.innerHeight
     );
     backGrd.addColorStop(0, "#000000");
-    backGrd.addColorStop(0.4, "#000019");
-    backGrd.addColorStop(0.6, "#000019");
+    backGrd.addColorStop(0.3, "#000030");
+    backGrd.addColorStop(0.7, "#000030");
     backGrd.addColorStop(1, "#000000");
   }
 
@@ -91,4 +91,4 @@ window.addEventListener("resize", () => {
 });
 
 // Number of Stars and background gradient on/off
-init(500, false);
+init(200, true);

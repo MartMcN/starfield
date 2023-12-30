@@ -2,7 +2,7 @@
 const Star = class {
   // Private fields
   // Tweak these
-  #velocityMultiplier = 1.01;
+  #velocityMultiplier = 1.001;
   #starSizeMax = 6;
 
   // Current pixel position
@@ -80,8 +80,8 @@ const Star = class {
     let yCenter = this.#y - window.innerHeight / 2;
 
     // Update velocity, sise and position
-    xCenter += (xCenter * this.#velocity) / 100;
-    yCenter += (yCenter * this.#velocity) / 100;
+    xCenter += (xCenter * this.#velocity) / 2000;
+    yCenter += (yCenter * this.#velocity) / 2000;
     this.#velocity *= this.#velocityMultiplier;
     this.#size =
       this.#velocity * 2 > this.#starSizeMax
