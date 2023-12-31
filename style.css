@@ -18,15 +18,16 @@ body {
 
 .canvas-view {
   position: fixed;
+  z-index: -10;
 }
 
 .main-container {
-  position: absolute;
-  padding: 2.5vh 2vw 2.5vh 2vw;
-  width: 96vw;
+  margin: auto;
+  width: 90vw;
 }
 
 .grid-container {
+  padding-top: 2.5vh;
   display: grid;
   gap: 5vh 5vh;
   height: 95vh;
@@ -60,7 +61,8 @@ body {
   background-color: rgb(255, 255, 255, 0.8);
   border: 5px solid rgb(242, 72, 43);
   padding: 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
+  /*filter: drop-shadow(3px 1px 10px #ffffff);*/
 }
 
 .grid-content-2 {
@@ -71,6 +73,7 @@ body {
 
 .grid-content-4 {
   background: none;
+  grid-row: 2 / span 2;
   display: flex;
 }
 
